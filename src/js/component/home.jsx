@@ -36,14 +36,14 @@ function Home () {
 			className="text-center mt-5 d-flex flex-colum align-items-center justify-content-start">
 			<div className="container">
 				<h1>Todo list</h1>
-				<input 
+				<input
 					className="form-control form-control-lg" 
 					type="text" 
 					placeholder="Import Task" 
 					aria-label="todo list input field"
 					value={todoInput}
-					onChange={e => setTodoInput(e.target.value)}/>
-				{todos.map((item, idx) => (<TodoItem 
+					onChange={e => setTodoInput(e.target.value.trimStart())}/>
+				{todos.map((item, idx) => (<TodoItem
 					key={idx}
 					label={item.label} 
 					is_done={item.is_done} 
